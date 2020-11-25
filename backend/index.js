@@ -1,18 +1,20 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
+const cors = require('cors')
 dotenv.config()
 
 const products = require('./data/products')
 const app = express()
 
+app.use(cors())
 
-app.get('/', (req,res) => {
+app.get('/api/products/', (req,res) => {
     return res.json(products)
 })
 
-app.get('/:id', (req,res) => {
-    const product = products.filter(p => p._id === req.params.id)
+app.get('/api/products/:id', (req,res) => {
+    const product = products.find(p => p._id === req.params.id)
     return res.json(product)
 })
 
