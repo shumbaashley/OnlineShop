@@ -1,7 +1,8 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const connectDB = require('./config/db')
+
 dotenv.config()
 
 const products = require('./data/products')
@@ -18,7 +19,7 @@ app.get('/api/products/:id', (req,res) => {
     return res.json(product)
 })
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("Connected to Database"))
+connectDB()
 
 const PORT = process.env.PORT || 5000
 
