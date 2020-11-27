@@ -13,6 +13,10 @@ const productSchema = mongoose.Schema({
         type : String,
         required : true
     },
+    image : {
+        type : String,
+        required : true
+    },
     description : {
         type : String,
         required : true
@@ -21,6 +25,10 @@ const productSchema = mongoose.Schema({
         type : Number,
         required : true,
         default : 0
+    },
+    brand : {
+        type : String,
+        required : true
     },
     category : {
         type : String,
@@ -33,6 +41,11 @@ const productSchema = mongoose.Schema({
         default : 0
     },
     countInStock : {
+        type : Number,
+        required : true,
+        default : 0
+    },
+    numReviews : {
         type : Number,
         required : true,
         default : 0

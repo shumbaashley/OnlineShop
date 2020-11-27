@@ -50,7 +50,6 @@ const OrderSchema = mongoose.Schema({
         status : {type : String, required : true},
         update_time : {type : String, required : true},
         email_address : {type : String, required : true},
-
     },
     isPaid : {
         type : Boolean,
